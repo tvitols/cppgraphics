@@ -13549,6 +13549,16 @@ void create_window(const std::string& title, double width, double height, bool f
     // This should be already the case.
     close_window();
 
+
+    SDL_DisplayMode DM;
+    if (SDL_GetDesktopDisplayMode(0, &DM) != 0)
+    {
+        SDL_Log("SDL_GetDesktopDisplayMode failed: %s", SDL_GetError());
+    }
+    const int w = DM.w;
+    const int h = DM.h-60;
+    if (width == -1) width = w;
+    if (height == -1) height = h;
     
     if (width < 0.)
         width = 800;
