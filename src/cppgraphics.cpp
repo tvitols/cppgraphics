@@ -15088,6 +15088,10 @@ bool image(const std::string& filename, double x, double y, double width, double
 }
 
 
+bool centered_image(const std::string& filename, double x, double y, double width, double height) {
+    return image(filename, x-(width/2), y-(height/2), width, height,0,0,0,0);
+}
+
 
 void draw_batch(const std::string& name, double x, double y)
 {

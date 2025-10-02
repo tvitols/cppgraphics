@@ -257,6 +257,8 @@ bool image(const std::string& filename, double x, double y, double width, double
 bool image(const std::string& filename, double x, double y, double width, double height,
            int cut_x, int cut_y, int cut_width, int cut_height);
 
+bool centered_image(const std::string& filename, double x, double y, double width, double height);
+
 
 // Following functions draw text (UTF-8 encoded). Current font and color are used.
 
